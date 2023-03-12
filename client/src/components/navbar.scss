@@ -1,0 +1,100 @@
+// tailwin shade
+// cmd k + cmd + g
+// $indigo: {
+//          100: "#ddddff",
+//          200: "#bbbbff",
+//          300: "#9999ff",
+//          400: "#7777ff",
+//          500: "#5555ff",
+//          600: "#4444cc",
+//          700: "#333399",
+//          800: "#222266",
+//          900: "#111133"
+// }
+
+// indigo: {
+//          100: "#dfdfcc",
+//          200: "#bfbf99",
+//          300: "#9f9f66",
+//          400: "#7f7f33",
+//          500: "#5f5f00",
+//          600: "#4c4c00",
+//          700: "#393900",
+//          800: "#262600",
+//          900: "#131300"
+// },
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  position: relative;
+
+  .wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      .logo {
+        font-size: 1.25rem;
+        color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+      }
+    }
+    .right {
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+
+        li {
+          // cursor: pointer;
+
+          .badge {
+            position: relative;
+            z-index: 88;
+
+            .counter {
+              position: absolute;
+              right: -12px;
+              top: -12px;
+              width: 20px;
+              height: 20px;
+              background-color: #5555ff;
+              color: white;
+              padding: 10px;
+              border-radius: 50%;
+              font-size: 11px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          .link {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .backdrop {
+    background-color: rgba(0, 0, 255, 0.3);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    height: 100vh;
+  }
+
+  // .cart {
+  //   position: absolute;
+  //   right: 20px;
+  //   top: 20px;
+  //   width: 500px;
+  //   background-color: rebeccapurple;
+  // }
+}

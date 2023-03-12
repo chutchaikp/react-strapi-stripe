@@ -1,0 +1,88 @@
+.checkout {
+  display: flex;
+  justify-content: center;
+
+  .error {
+    color: red;
+    font-weight: bold;
+    border: 1px solid red;
+  }
+
+  form {
+    width: 80%;
+    .wrapper {
+      .billing {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        input {
+          padding: 10px;
+        }
+        .name {
+          display: flex;
+          gap: 10px;
+          input {
+            flex: 1;
+          }
+
+          @media screen and (max-width: 480px) {
+            flex-direction: column;
+          }
+        }
+        .street {
+          display: flex;
+          gap: 10px;
+          input {
+            flex: 1;
+          }
+          @media screen and (max-width: 480px) {
+            flex-direction: column;
+          }
+        }
+        .city {
+          display: flex;
+          gap: 10px;
+          input {
+            // flex: 1;
+            width: calc(50% - 5px);
+            @media screen and (max-width: 480px) {
+              width: 100%;
+            }
+          }
+          @media screen and (max-width: 480px) {
+            flex-direction: column;
+          }
+          .stateZip {
+            flex: 1;
+            // background-color: rebeccapurple;
+            display: flex;
+            gap: 10px;
+            input: {
+              flex: 1;
+            }
+            @media screen and (max-width: 480px) {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+
+      input[type='submit'] {
+        margin-top: 20px;
+        padding: 10px 30px;
+        border: none;
+        background: transparent;
+        background-color: teal;
+        color: white;
+        font-weight: bold;
+        // border-radius: 10px;
+      }
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}

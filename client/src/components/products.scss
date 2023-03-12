@@ -1,0 +1,19 @@
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .items {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .item {
+      width: 300px;
+      // background-color: pink;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.confirmation {
+  display: flex;
+  justify-content: center;
+
+  .wrapper {
+    width: 80%;
+    background-color: rgba(0, 128, 0, 0.1);
+    padding: 20px;
+
+    h1 {
+      color: green;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
