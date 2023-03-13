@@ -1,0 +1,7 @@
+mysql:
+dbname: ecommerce
+u: root
+p: 12345
+p: _Thailand1302
+
+youtube: https://www.youtube.com/watch?v=EBCdyQ_HFMo&list=PLJUyh5ULdyuAwe4HoMNJAVm7GAAddxwFT&index=2

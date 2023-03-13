@@ -4,7 +4,7 @@ const Footer = () => {
     <div className="footer">
       <div className="wrapper">
         <div className="left">
-          <h2>DEV SHOP</h2>
+          <h2>DEV</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
             porro sed maiores enim quaerat, culpa fugit facilis magnam incidunt

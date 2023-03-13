@@ -1,5 +1,0 @@
-mysql:
-dbname: ecommerce
-u: root
-p: 12345
-p: _Thailand1302

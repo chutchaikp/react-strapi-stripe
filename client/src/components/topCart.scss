@@ -43,6 +43,10 @@
             display: flex;
             justify-content: space-between;
             font-weight: 600;
+
+            .remove {
+              cursor: pointer;
+            }
           }
           .desc {
             font-size: 12px;
@@ -83,11 +87,12 @@
       display: flex;
       button {
         width: 100%;
-        padding: 20px;
+        padding: 15px;
         border: none;
         color: white;
         background-color: rgb(44, 44, 44);
         cursor: pointer;
+        border-radius: 5px;
 
         &:hover {
           background-color: rgba(44, 44, 44, 0.95);
@@ -96,6 +101,11 @@
     }
 
     .reset {
+      button {
+        border: none;
+        color: red;
+        padding: 5px;
+      }
     }
   }
 }

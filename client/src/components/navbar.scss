@@ -37,6 +37,8 @@
     justify-content: space-between;
 
     .left {
+      display: flex;
+      align-items: center;
       .logo {
         font-size: 1.25rem;
         color: rgba(0, 0, 0, 0.5);
@@ -74,6 +76,19 @@
           }
           .link {
             cursor: pointer;
+          }
+
+          .onSearch {
+            transition: all 2s ease;
+
+            position: absolute;
+            top: 50px;
+            left: auto;
+            right: auto;
+            input[type='text'] {
+              padding: 10px;
+              width: 300px;
+            }
           }
         }
       }

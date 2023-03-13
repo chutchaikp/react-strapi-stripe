@@ -49,7 +49,9 @@ const Product = ({ item }) => {
       </div>
       <p className="category">{item.attributes.category}</p>
       <p className="name">{item.attributes.name}</p>
-      <p className="price">$ {item.attributes.price}</p>
+      <p className="price">฿ {item.attributes.price}</p>
+
+      {/* cmd + ctrl + space */}
     </div>
   );
 };

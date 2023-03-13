@@ -47,7 +47,7 @@ const Item = () => {
           <div className="name">
             <h2> {product.attributes.name} </h2>
           </div>
-          <div className="price">$ {product.attributes.price}</div>
+          <div className="price">฿ {product.attributes.price}</div>
           <div className="desc">{product.attributes.shortDescription}</div>
           <div className="descAlt">{product.attributes.longDescription}</div>
 

@@ -10,6 +10,8 @@ import { useNavigate } from 'react-router-dom';
 import './navbar.scss';
 import TopCart from './TopCart';
 const Navbar = () => {
+  const [onSearch, setOnSearch] = useState(false);
+
   const { items } = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const [showCart, setShowCart] = useState(false);
@@ -20,14 +22,21 @@ const Navbar = () => {
       <div className="wrapper">
         <div className="left">
           <div className="logo" onClick={() => navigate('/')}>
-            DEV SHOP
+            DEV
           </div>
         </div>
         <div className="right">
           <ul>
             <li>
+              {onSearch && (
+                <div className="onSearch">
+                  <input type="text" />
+                </div>
+              )}
+            </li>
+            <li>
               <div className="link">
-                <MdSearch />
+                <MdSearch onClick={() => setOnSearch(!onSearch)} />
               </div>
             </li>
             <li>

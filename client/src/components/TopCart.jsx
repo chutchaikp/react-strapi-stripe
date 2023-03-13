@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { MdAdd, MdClose, MdRemove } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -5,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   decreaseQuantity,
   increseQuantity,
+  removeItem,
   resetItems,
 } from '../redux/cartSlice';
 import './topCart.scss';
@@ -14,6 +16,20 @@ const TopCart = ({ onClose }) => {
 
   const { items } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const [subtotal, setSubtotal] = useState(0);
+
+  useEffect(() => {
+    try {
+      const _subtotal = items.reduce((acc, val) => {
+        const total = acc + val.quantity * val.product.attributes.price;
+        return total;
+      }, 0);
+      setSubtotal(_subtotal);
+    } catch (error) {
+      debugger;
+    }
+  }, [items]);
+
   return (
     <div className="topCart">
       <div className="wrapper">
@@ -37,7 +53,10 @@ const TopCart = ({ onClose }) => {
               <div className="details">
                 <div className="title">
                   <div className="text">{it.product.attributes.name}</div>
-                  <div className="remove">
+                  <div
+                    className="remove"
+                    onClick={() => dispatch(removeItem(it))}
+                  >
                     <MdClose />
                   </div>
                 </div>
@@ -58,51 +77,28 @@ const TopCart = ({ onClose }) => {
                       +
                     </button>
                   </div>
-                  <div className="price">$ {it.product.attributes.price}</div>
+                  <div className="price"> ฿ {it.product.attributes.price}</div>
                 </div>
               </div>
             </div>
           ))}
-
-          {/* <div className="list">
-            <img
-              src="http://localhost:1337/uploads/thumbnail_light_mens_jeans_with_rips_613549_zoom_a394564af5.jpg?updated_at=2023-03-07T01:13:17.335Z"
-              alt=""
-            />
-            <div className="details">
-              <div className="title">
-                <div className="text">Evening Text Shirt</div>
-                <div className="remove">
-                  <MdClose />
-                </div>
-              </div>
-              <div className="desc">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
-                aliquam necessitatibus, tempore nemo dignissimos dicta pariatur
-                quam vero qui voluptate?
-              </div>
-              <div className="total">
-                <div className="quantity">
-                  <button>
-                    <MdRemove />
-                  </button>
-                  <span>5</span>
-                  <button>
-                    <MdAdd />
-                  </button>
-                </div>
-                <div className="price">$20</div>
-              </div>
-            </div>
-          </div>
-           */}
         </div>
         <div className="subtotal">
           <div className="text">SUBTOTAL</div>
-          <div className="price">$60</div>
+          <div className="price">
+            {' '}
+            <b> ฿ </b> {subtotal}
+          </div>
         </div>
         <div className="btn">
-          <button onClick={() => navigate('/checkout')}>CHECKOUT</button>
+          <button
+            onClick={() => {
+              onClose();
+              navigate('/checkout');
+            }}
+          >
+            CHECKOUT
+          </button>
         </div>
 
         <div className="reset">
